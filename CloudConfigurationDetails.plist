@@ -9,9 +9,7 @@
 	<key>AwaitDeviceConfigured</key>
 	<false/>
 	<key>ConfigurationSource</key>
-	<integer>1</integer>
-	<key>ConfigurationURL</key>
-	<string>https://airwatch.ilaniresort.com/DeviceServices/Enrollment/DeviceMdmConfiguration.aspx?depid=9aed2a28-87ea-4c0e-b20b-334c4078110f</string>
+	<integer>0</integer>
 	<key>IsMDMUnremovable</key>
 	<integer>0</integer>
 	<key>IsMandatory</key>
