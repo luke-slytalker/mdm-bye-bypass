@@ -28,31 +28,48 @@ echo "Replacing with patched versions..."
 
 ##### upload modified config files here #####
 
-echo "In a new Terminal, run command:"
-echo " scp -P PORT CloudConfigurationDetails.plist root@localhost:/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/"
-echo " scp -P PORT CloudConfigurationSetAsideDetails.plist root@localhost:/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/"
+echo "In a new Terminal, copy and paste the command:"
 echo ""
-echo "Once you've done that, come back to this window and type:  r"
+echo " scp -P PORT CloudConfigurationDetails.plist root@localhost:/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/"
+echo ""
+echo "Once you've done that, come back to this window and type:  n"
 
 while read -r -n 1 key
 do
-if [[ $key = r ]] ; then
+if [[ $key = n ]] ; then
    break;
 fi
 done
-echo "\n\n"
-echo "---------------------------"
+
+echo "Now, in that new terminal window, copy and paste this command: "
+echo ""
+echo " scp -P PORT CloudConfigurationSetAsideDetails.plist root@localhost:/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/"
+echo ""
+echo "Once you've done that, come back to this window and type:  n"
+
+while read -r -n 1 key
+do
+if [[ $key = n ]] ; then
+   break;
+fi
+done
+
+echo "----------------------------------------------"
+echo "        Configuration Files replaced."
+echo " "
+echo "----------------------------------------------"
 echo "Clearing UI Cache... (this will take a moment)"
 
 uicache --all
 wait
-
-echo "Restarting SpringBoard / Backboardd..."
+echo "----------------------------------------------"
+echo "    Restarting SpringBoard / Backboardd..."
 killall backboardd
 wait
 
-echo "Finished."
+echo "SpringBoard and Backboardd have been restarted."
+echo ""
 
-echo "   ---------- FINISHED ----------"
-echo "   Click through the setup screens to complete. \n\n"
+echo "   --------------  FINISHED  --------------"
+echo "   Click through the setup screens to complete."
 echo ""
