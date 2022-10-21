@@ -8,6 +8,7 @@ In a new terminal window, run:
 
 In a 2nd terminal window, run:  
 `ssh root@localhost -p 44`
+
 Password:  alpine
 
 This should drop you into a shell with root level permissions.
@@ -20,8 +21,10 @@ Once the shell script uploads to the device, you'll need to update its permissio
 To do that, you'll need to run the following command in the terminal that you are connected to your device with (the one you ran SSH in):
 `chmod +x mdm-bye-bypass.sh`
 
+
 Once that's done, it's time to run the script on the device:
 `./mdm-bye-bypass.sh`
+
 
 Follow the prompts after that and everything should go smooth.
 
